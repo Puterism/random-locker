@@ -45,14 +45,14 @@
     const $list = document.querySelector('.list');
     const $rollButton = document.querySelector('#roll');
     
-    const people = ['미키', '동동', '도비', '신세한탄', '브랜', '주모', '엘라', '카일' , '티케', '서니', '지그', '그루밍', '하루', '유조', '썬', '곤이', '파노', '콜린', '인치','다윗', '크리스', '심바','디토','브콜'];
+    const people = ['미키', '도비', '신세한탄', '브랜', '엘라', '카일' , '티케', '서니', '지그', '그루밍', '하루', '유조', '썬', '곤이', '파노', '콜린', '인치','다윗', '크리스', '심바','디토','브콜'];
 
     $rollButton.addEventListener('click', () => {
-      const visited = [19, 20];
-      let result = {19: '피터', 20: '체프'};
+      const visited = [9, 10, 19, 20];
+      let result = {9: '주모', 10: '동동', 19: '피터', 20: '체프'};
       let i = 0;
 
-      while (i < 24) {
+      while (i < 22) {
         const randomNumber = Math.floor(Math.random() * 26 + 1);
         
         if (visited.includes(randomNumber)) {
