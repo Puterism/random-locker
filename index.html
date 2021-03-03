@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>라커룸</title>
+  <style>
+    .container {
+      
+    }
+
+    .list li {
+       
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button id="roll">돌리기!</button>
+    <ol class="list">
+      <li>
+        
+      </li>
+    </ul>
+  </div>
+  <script>
+    const $list = document.querySelector('.list');
+    const $rollButton = document.querySelector('#roll');
+    
+    const people = ['미키', '동동', '도비', '신세한탄', '브랜', '주모', '엘라', '카일' , '티케', '서니', '지그', '그루밍', '하루', '유조', '썬', '곤이', '파노', '콜린', '인치','다윗', '크리스', '심바','디토','브콜'];
+
+    $rollButton.addEventListener('click', () => {
+      const visited = [19, 20];
+      let result = {19: '피터', 20: '체프'};
+      let i = 0;
+
+      while (i < 24) {
+        const randomNumber = Math.floor(Math.random() * 26 + 1);
+        
+        if (visited.includes(randomNumber)) {
+          continue;
+        }
+
+        visited.push(randomNumber);
+        result[randomNumber] = people[i];
+        i += 1;
+      }
+
+      $list.innerHTML = Object.values(result).map(item => `
+        <li>${item}</li>
+      `).join('');
+    })
+
+  </script>
+
+</body>
+</html>
